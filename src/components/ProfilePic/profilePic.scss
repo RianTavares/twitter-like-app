@@ -1,0 +1,13 @@
+.profile-picture {
+  margin-right: $GUTTER/2;
+  
+  &__shape {
+    width: 48px;
+    height: 48px;
+    background-image: url('../../assests/images/profile-icon.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: white;
+    border-radius: 50%;
+  }
+}

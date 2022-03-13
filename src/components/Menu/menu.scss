@@ -1,0 +1,102 @@
+.menu {
+  width: 100%;
+  height: $GUTTER*2;
+  background-color: $BACKGROUND;
+  padding: 0 $GUTTER/2;
+  @include gray-border-top;
+
+  display: flex;
+  align-items: center;
+
+  position: fixed;
+  bottom: 0;
+  
+  @media #{$BREAKPOINT-TABLET} {
+    width: $GUTTER*4;
+    height: 100%;
+    border-top: 0;
+    @include gray-border-right;
+    left: 0;
+  }
+  
+  &__container {
+    width: 100%;
+    padding: 0 $GUTTER/2;
+    margin: 0;
+    list-style-type: none;
+
+    display: flex;
+
+    @media #{$BREAKPOINT-TABLET} {
+      height: 100%;
+      flex-direction: column;
+      align-items: center;
+      padding: $GUTTER/2 0;
+    }
+
+    li:not(:first-child) {
+      margin-left: $GUTTER*2;
+
+      @media #{$BREAKPOINT-TABLET} {
+        margin-left: 0;
+        margin-top: $GUTTER*2;
+      }
+    }
+  }
+
+  &__home {
+    height: 40px;
+    width: 40px;
+    position: relative;
+
+    button {
+      background-image: url('../../assests/images/bird-house-sprite.png');
+      background-size: 200%;
+      background-repeat: no-repeat;
+      background-position: left;
+      height: 40px;
+      width: 40px;
+
+      position: absolute;
+      left: -4px;
+    }
+  }
+
+  &__like {
+    height: 40px;
+    width: 40px;
+    position: relative;
+
+    button {
+      background-image: url('../../assests/images/heart-sprite.png');
+      background-size: 200%;
+      background-repeat: no-repeat;
+      background-position: left;
+      height: 40px;
+      width: 40px;
+
+      position: absolute;
+      left: -4px;
+    }
+  }
+
+  &__button {
+    text-indent: -9999em;
+    border: 0;
+    background-color: transparent;
+  }
+}
+
+.highlight {
+  animation: button-highlight 0.1s steps(1) forwards;
+}
+
+
+@keyframes button-highlight {
+from {
+  background-position: left;
+}
+to {
+  background-position: right;
+}
+}
