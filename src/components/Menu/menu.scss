@@ -10,6 +10,7 @@
 
   position: fixed;
   bottom: 0;
+  z-index: 2;
   
   @media #{$BREAKPOINT-TABLET} {
     width: $GUTTER*4;
@@ -58,6 +59,8 @@
     height: 40px;
     width: 40px;
     position: relative;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0;
 
     button {
       cursor: pointer;
@@ -67,6 +70,8 @@
       background-position: left;
       height: 40px;
       width: 40px;
+      -webkit-tap-highlight-color: transparent;
+      outline: 0;
 
       position: absolute;
       left: -4px;
@@ -78,6 +83,8 @@
     height: 40px;
     width: 40px;
     position: relative;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0;
 
     button {
       cursor: pointer;
@@ -87,6 +94,8 @@
       background-position: left;
       height: 40px;
       width: 40px;
+      -webkit-tap-highlight-color: transparent;
+      outline: 0;
 
       position: absolute;
       left: -4px;

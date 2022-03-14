@@ -21,9 +21,9 @@ const tweets = merge(
 );
 
 function Home() {
+  const dispatch = useDispatch();
   const [tweetsList, setTweetsList] = useState([]);
   const tweetTimeLimit = 30000;
-  const dispatch = useDispatch();
 
   const removeOldTweets = (list) => {
     const now = Date.now();
@@ -37,14 +37,15 @@ function Home() {
 
   useEffect(() => {
     dispatch(PageActions.setCurrentPage({ index: 0, name: 'home' }));
-    const a = tweets.subscribe((observer) => setTweetsList((prevState) => {
+    const subscriber = tweets.subscribe((observer) => setTweetsList((prevState) => {
       const newList = [...prevState];
       observer.id = `${observer.account}-${observer.timestamp}`;
+      observer.liked = false;
       newList.unshift(observer);
       return removeOldTweets(newList);
     }));
 
-    return () => a.unsubscribe();
+    return () => subscriber.unsubscribe();
   }, []);
 
   if (tweetsList.length <= 0) return <Loading />;
