@@ -18,6 +18,11 @@
     @include gray-border-right;
     left: 0;
   }
+
+  @media #{$BREAKPOINT-DESK} {
+    width: calc(65% - 600px);
+    justify-content: flex-end;
+  }
   
   &__container {
     width: 100%;
@@ -34,22 +39,28 @@
       padding: $GUTTER/2 0;
     }
 
+    @media #{$BREAKPOINT-DESK} {
+      max-width: 250px;
+    }
+
     li:not(:first-child) {
       margin-left: $GUTTER*2;
 
       @media #{$BREAKPOINT-TABLET} {
         margin-left: 0;
-        margin-top: $GUTTER*2;
+        margin-top: $GUTTER;
       }
     }
   }
 
   &__home {
+    cursor: pointer;
     height: 40px;
     width: 40px;
     position: relative;
 
     button {
+      cursor: pointer;
       background-image: url('../../assests/images/bird-house-sprite.png');
       background-size: 200%;
       background-repeat: no-repeat;
@@ -63,11 +74,13 @@
   }
 
   &__like {
+    cursor: pointer;
     height: 40px;
     width: 40px;
     position: relative;
 
     button {
+      cursor: pointer;
       background-image: url('../../assests/images/heart-sprite.png');
       background-size: 200%;
       background-repeat: no-repeat;
@@ -84,11 +97,19 @@
     text-indent: -9999em;
     border: 0;
     background-color: transparent;
+    color: $TEXT;
+
+    @media #{$BREAKPOINT-DESK} {
+      text-indent: 2.5em;
+      font-size: 16px;
+      white-space: nowrap;
+    }
   }
 }
 
 .highlight {
   animation: button-highlight 0.1s steps(1) forwards;
+  font-weight: bold;
 }
 
 

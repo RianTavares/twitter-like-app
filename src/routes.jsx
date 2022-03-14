@@ -5,13 +5,18 @@ import {
   Route,
 } from 'react-router-dom';
 
+import UIShell from './template/UIShell';
 import Home from './pages/Home';
+import Likes from './pages/Likes';
 
 const RoutesCpnt = () => (
   <BrowserRouter>
-    <Routes>
-      <Route index path="/" element={<Home />} />
-    </Routes>
+    <UIShell>
+      <Routes>
+        <Route index path="/" element={<Home />} />
+        <Route path="/likes" element={<Likes />} />
+      </Routes>
+    </UIShell>
   </BrowserRouter>
 );
 

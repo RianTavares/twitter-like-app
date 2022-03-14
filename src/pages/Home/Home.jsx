@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { interval, merge } from 'rxjs';
 import { map } from 'rxjs/operators';
-
-import Tweet from '../../components/Tweet';
 import Loading from '../../components/Loading';
+import Tweet from '../../components/Tweet';
+import * as PageActions from '../../store/actions/pages';
 
 const createTweetSource = (frequency, account, attribute) => (
   interval(frequency).pipe(map((i) => ({
@@ -22,6 +23,7 @@ const tweets = merge(
 function Home() {
   const [tweetsList, setTweetsList] = useState([]);
   const tweetTimeLimit = 30000;
+  const dispatch = useDispatch();
 
   const removeOldTweets = (list) => {
     const now = Date.now();
@@ -34,12 +36,15 @@ function Home() {
   };
 
   useEffect(() => {
-    tweets.subscribe((observer) => setTweetsList((prevState) => {
+    dispatch(PageActions.setCurrentPage({ index: 0, name: 'home' }));
+    const a = tweets.subscribe((observer) => setTweetsList((prevState) => {
       const newList = [...prevState];
+      observer.id = `${observer.account}-${observer.timestamp}`;
       newList.unshift(observer);
       return removeOldTweets(newList);
     }));
-    return () => tweets.unsubscribe();
+
+    return () => a.unsubscribe();
   }, []);
 
   if (tweetsList.length <= 0) return <Loading />;

@@ -1,17 +1,25 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-
-import ProfilePic from '../ProfilePic';
-import LikeButton from '../LikeButton';
-
 import { getSecsFromNow } from '../../utils/date';
+import LikeButton from '../LikeButton';
+import ProfilePic from '../ProfilePic';
 
 const Tweet = (props) => {
   const { source } = props;
+  // const source = {
+  //   content: 'Teste',
+  //   account: 'Conta',
+  //   timestamp: '1231231435453',
+  //   id: 'Conta-1231231435453',
+  // };
+
+  // useEffect(() => {
+  //   source.id = `${source.account}-${source.id}`;
+  // }, []);
 
   return (
     <>
-      {/* {source.map((tweet) => (
+      {source.map((tweet) => (
         <article className="tweet" key={`${tweet.account}-${tweet.timestamp}`}>
           <ProfilePic />
           <section className="tweet__content">
@@ -20,10 +28,13 @@ const Tweet = (props) => {
               <span className="tweet__time">{getSecsFromNow(tweet.timestamp)}</span>
             </div>
             <p className="tweet__text">{tweet.content}</p>
+            <div className="tweet__actions">
+              <LikeButton source={tweet} />
+            </div>
           </section>
         </article>
-      ))} */}
-      <article className="tweet">
+      ))}
+      {/* <article className="tweet">
         <ProfilePic />
         <section className="tweet__content">
           <div className="tweet__header">
@@ -32,7 +43,7 @@ const Tweet = (props) => {
           </div>
           <p className="tweet__text">Funny Tweet number 3</p>
           <div className="tweet__actions">
-            <LikeButton />
+            <LikeButton source={source} />
           </div>
         </section>
       </article>
@@ -165,7 +176,7 @@ const Tweet = (props) => {
             <LikeButton />
           </div>
         </section>
-      </article>
+      </article> */}
     </>
   );
 };

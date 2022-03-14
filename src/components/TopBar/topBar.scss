@@ -6,6 +6,7 @@
   padding: 0 $GUTTER/2;
 
   position: fixed;
+  z-index: 2;
   top: 0;
   left: 0;
 
@@ -14,17 +15,36 @@
   
   @include margin-page;
 
+  @media #{$BREAKPOINT-TABLET} {
+    @include gray-border-right;
+  }
+
   &__column {
     width: 50%;
+  }
+
+  &__column:last-child {
+    display: flex;
+    justify-content: flex-end;
   }
 
   &__like-counter {
     width: 100%;
     text-align: left;
   }
+}
 
-  &__delete-all {
-    width: 100%;
-    text-align: right;
+.clear-button {
+  text-align: right;
+  background-color: transparent;
+  border: 0;
+  color: $ALERT_TEXT;
+
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    width: 14px;
+    margin-right: $GUTTER/8;
   }
 }

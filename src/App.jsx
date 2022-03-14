@@ -1,15 +1,14 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+
 import Routes from './routes';
 
-import TopBar from './components/TopBar';
-import Menu from './components/Menu';
+import store from './store';
 
 const App = () => (
-  <section className="twitter-like-app">
-    <TopBar />
+  <Provider store={store}>
     <Routes />
-    <Menu />
-  </section>
+  </Provider>
 );
 
 export default App;

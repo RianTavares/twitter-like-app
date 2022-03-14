@@ -10,6 +10,7 @@
 
   &__heart {
     position: absolute;
+    z-index: 1;
     left: -17px;
     top: 0;
 
@@ -27,6 +28,10 @@
 
   .liking-action {
     animation: heart-beat 0.8s steps(29) forwards;
+  }
+
+  .liked {
+    background-position: right;
   }
 }
 
