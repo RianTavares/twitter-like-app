@@ -1,21 +1,27 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as TweetsActions from '../../store/actions/tweets';
 
 const LikeButton = (props) => {
-  const { source } = props;
+  const { tweetData } = props;
   const dispatch = useDispatch();
   const likedTweets = useSelector((state) => state.tweets.likedTweets);
+
   const [previousLiked, setPreviousLiked] = useState(false);
 
   const handleLikedPosts = (isLiked) => {
-    if (isLiked) dispatch(TweetsActions.setLikedTweets(source));
-    else if (!isLiked) dispatch(TweetsActions.removeUnlikedTweets(source));
+    if (isLiked) {
+      dispatch(TweetsActions.updateTweetLikeStatus({ id: tweetData.id, liked: true }));
+      dispatch(TweetsActions.setLikedTweets({ ...tweetData, liked: true }));
+    } else if (!isLiked) {
+      dispatch(TweetsActions.updateTweetLikeStatus({ id: tweetData.id, liked: false }));
+      dispatch(TweetsActions.removeUnlikedTweets({ ...tweetData, liked: false }));
+    }
   };
 
   const checkTweetStatus = () => {
-    const status = likedTweets.findIndex((item) => item.id === source.id) || null;
-    if (status >= 0) setPreviousLiked(true);
+    setPreviousLiked(tweetData.liked);
   };
 
   const handleLike = (e) => {
