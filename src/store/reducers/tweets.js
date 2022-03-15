@@ -45,6 +45,18 @@ function tweets(state = INITIAL_STATE, action) {
       };
     }
 
+    case 'CLEAR_ALL_TWEETS_LIST':
+      return {
+        ...state,
+        allTweets: [],
+      };
+
+    case 'CLEAR_LIKED_TWEETS_LIST':
+      return {
+        ...state,
+        likedTweets: [],
+      };
+
     default:
       return state;
   }

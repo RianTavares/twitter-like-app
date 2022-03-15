@@ -1,0 +1,9 @@
+@import './conf';
+
+:export {
+  alertText: $ALERT_TEXT;
+  borderColor: $BORDER_COLOR;
+  text: $TEXT;
+  secondaryText: $SECONDARY_TEXT;
+  lightColor: $LIGHT_COLOR;
+}

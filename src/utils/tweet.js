@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 const TWEET_TIME_LIMIT = 30000; // 30 seconds in ms
 
 export const removeOldTweets = (list) => {

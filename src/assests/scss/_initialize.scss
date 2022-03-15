@@ -7,10 +7,10 @@ body {
   background-color: $BACKGROUND;
 }
 
-p, span {
+p, span, h1 {
   margin: 0;
   color: $TEXT;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: $FONT;
 }
 
 .twitter-like-app {
