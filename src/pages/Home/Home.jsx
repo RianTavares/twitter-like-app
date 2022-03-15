@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { interval, merge } from 'rxjs';
 import { map } from 'rxjs/operators';
-import Loading from '../../components/Loading';
-import Tweet from '../../components/Tweet';
+import TweetsList from '../../components/TweetsList';
 import * as PageActions from '../../store/actions/pages';
+import * as TweetsActions from '../../store/actions/tweets';
+import { PAGE_NAMES } from '../../utils/constants';
 
 const createTweetSource = (frequency, account, attribute) => (
   interval(frequency).pipe(map((i) => ({
@@ -20,39 +22,25 @@ const tweets = merge(
   createTweetSource(5000, 'CommitStrip', 'Funny'),
 );
 
-function Home() {
+const Home = () => {
   const dispatch = useDispatch();
-  const [tweetsList, setTweetsList] = useState([]);
-  const tweetTimeLimit = 30000;
-
-  const removeOldTweets = (list) => {
-    const now = Date.now();
-    const oldTweetIndex = list.findIndex(
-      (tweet) => (now - tweet.timestamp) > tweetTimeLimit,
-    );
-
-    if (oldTweetIndex !== -1) { return list.slice(0, oldTweetIndex); }
-    return list;
-  };
 
   useEffect(() => {
-    dispatch(PageActions.setCurrentPage({ index: 0, name: 'home' }));
-    const subscriber = tweets.subscribe((observer) => setTweetsList((prevState) => {
-      const newList = [...prevState];
+    dispatch(PageActions.setCurrentPage({ index: 0, name: PAGE_NAMES.HOME }));
+
+    const subscriber = tweets.subscribe((observer) => {
       observer.id = `${observer.account}-${observer.timestamp}`;
       observer.liked = false;
-      newList.unshift(observer);
-      return removeOldTweets(newList);
-    }));
+
+      dispatch(TweetsActions.setNewTweetsList(observer));
+    });
 
     return () => subscriber.unsubscribe();
   }, []);
 
-  if (tweetsList.length <= 0) return <Loading />;
-
   return (
-    <Tweet source={tweetsList} />
+    <TweetsList type={PAGE_NAMES.HOME} />
   );
-}
+};
 
 export default Home;

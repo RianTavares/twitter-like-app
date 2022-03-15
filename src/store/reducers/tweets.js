@@ -1,5 +1,8 @@
+import { removeOldTweets } from '../../utils/tweet';
+
 const INITIAL_STATE = {
   likedTweets: [],
+  allTweets: [],
 };
 
 function tweets(state = INITIAL_STATE, action) {
@@ -15,6 +18,30 @@ function tweets(state = INITIAL_STATE, action) {
       return {
         ...state,
         likedTweets: newList,
+      };
+    }
+
+    case 'SET_NEW_TWEETS_LIST': {
+      const newList = [...state.allTweets];
+      newList.unshift(action.payload);
+
+      return {
+        ...state,
+        allTweets: removeOldTweets(newList),
+      };
+    }
+
+    case 'UPDATE_TWEET_LIKE_STATUS': {
+      const newList = state.allTweets.map((tweet) => {
+        if (tweet.id === action.payload.id) {
+          return { ...tweet, liked: action.payload.liked };
+        }
+        return tweet;
+      });
+
+      return {
+        ...state,
+        allTweets: newList,
       };
     }
 

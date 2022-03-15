@@ -2,6 +2,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { PAGE_NAMES } from '../../utils/constants';
 
 const Menu = () => {
   const currentPage = useSelector((state) => state.pages.currentPage);
@@ -16,7 +17,7 @@ const Menu = () => {
       <ul className="menu__container">
         <li className="menu__home">
           <button
-            className={`menu__button ${currentPage.name === 'home' && 'highlight'}`}
+            className={`menu__button ${currentPage.name === PAGE_NAMES.HOME && 'highlight'}`}
             onClick={() => goTo('/')}
             type="button"
           >
@@ -25,7 +26,7 @@ const Menu = () => {
         </li>
         <li className="menu__like">
           <button
-            className={`menu__button ${currentPage.name === 'likes' && 'highlight'}`}
+            className={`menu__button ${currentPage.name === PAGE_NAMES.LIKE && 'highlight'}`}
             onClick={() => goTo('/likes')}
             type="button"
           >

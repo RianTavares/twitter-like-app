@@ -3,18 +3,24 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as TweetsActions from '../../store/actions/tweets';
 
 const LikeButton = (props) => {
-  const { source } = props;
   const dispatch = useDispatch();
   const likedTweets = useSelector((state) => state.tweets.likedTweets);
+
+  const { tweetData } = props;
   const [previousLiked, setPreviousLiked] = useState(false);
 
   const handleLikedPosts = (isLiked) => {
-    if (isLiked) dispatch(TweetsActions.setLikedTweets(source));
-    else if (!isLiked) dispatch(TweetsActions.removeUnlikedTweets(source));
+    if (isLiked) {
+      dispatch(TweetsActions.setLikedTweets(tweetData));
+      dispatch(TweetsActions.updateTweetLikeStatus({ id: tweetData.id, liked: true }));
+    } else if (!isLiked) {
+      dispatch(TweetsActions.removeUnlikedTweets(tweetData));
+      dispatch(TweetsActions.updateTweetLikeStatus({ id: tweetData.id, liked: false }));
+    }
   };
 
   const checkTweetStatus = () => {
-    const status = likedTweets.findIndex((item) => item.id === source.id) || null;
+    const status = likedTweets.findIndex((item) => item.id === tweetData.id) || null;
     if (status >= 0) setPreviousLiked(true);
   };
 
