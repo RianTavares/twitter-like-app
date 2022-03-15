@@ -1,7 +1,7 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import logo from '../../assests/images/twitter-like-app-light-logo.svg';
 import { PAGE_NAMES } from '../../utils/constants';
 
 const Menu = () => {
@@ -15,6 +15,11 @@ const Menu = () => {
   return (
     <nav className="menu">
       <ul className="menu__container">
+        <li className="menu__logo">
+          <a href="/">
+            <img className="twitter-like-logo" src={logo} alt="twitter-like app" />
+          </a>
+        </li>
         <li className="menu__home">
           <button
             className={`menu__button ${currentPage.name === PAGE_NAMES.HOME && 'highlight'}`}

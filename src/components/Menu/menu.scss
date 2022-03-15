@@ -44,7 +44,7 @@
       max-width: 250px;
     }
 
-    li:not(:first-child) {
+    li:last-child {
       margin-left: $GUTTER*2;
 
       @media #{$BREAKPOINT-TABLET} {
@@ -112,6 +112,24 @@
       text-indent: 2.5em;
       font-size: 16px;
       white-space: nowrap;
+    }
+  }
+
+  &__logo {
+    display: none;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0;
+
+    @media #{$BREAKPOINT-DESK} {
+      display: block;
+      margin: $GUTTER 0;
+    }
+
+    .twitter-like-logo {
+      width: 100%;
     }
   }
 }
