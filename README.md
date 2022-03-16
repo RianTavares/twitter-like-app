@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+<div align="center">
+  <a href="https://github.com/RianTavares/pokedex" alt="Twitter-like app">
+    <img width="300px" src="./src/assets/../assests/images/twitter-like-app-logo.svg">
+  </a>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<hr />
 
-## Available Scripts
+<div align="center">
+  <a href="https://www.codefactor.io/repository/github/riantavares/twitter-like-app">
+    <img src="https://www.codefactor.io/repository/github/riantavares/twitter-like-app/badge?s=f8b7ca012a4ad4d1e4f1200c14df987b31086f50" alt="CodeFactor" />
+  </a>
+  <a href="https://main.d2k3vgnljt4tx7.amplifyapp.com/">
+    <img src="https://img.shields.io/badge/.-deployed-green?logo=amazonaws" alt="AWS Amplify" />
+  </a>
+  <a href="https://github.com/facebook/react">
+    <img src="https://img.shields.io/badge/.-React-%2361DAFB?logo=react" alt="React" />
+  </a>
+  <a href="https://react-redux.js.org/">
+    <img src="https://img.shields.io/badge/.-Redux-blueviolet?logo=redux" alt="React Redux" />
+  </a>
+  <a href="https://rxjs.dev/">
+    <img src="https://img.shields.io/badge/.-RxJS-%23B7178C?logo=reactivex" alt="RxJS" />
+  </a>
+</div>
 
-In the project directory, you can run:
+## What does it do
+This project is part of a front-end challenge. 
+The core function is to list values sent by an Observable as a Twitter-like structure/style and manage them, such as like/dislike them, list liked tweets, and delete them. You can check the full description of the challenge in [this pdf](./src/assests/pdf/Twitter-like_application.pdf).
 
-### `npm start`
+## Table of contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Overview](#what-does-it-do)
+  - [Demo](#demo)
+  - [Features](#features)
+  - [Technology and resources](#technology-and-resources)
+  - [Style Guide](#style-guide)
+- [Setup process](#fast-setup)
+  - [Fast setup](#fast-setup)
+- [Development process explained](docs/PROCESS.md)
+  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Demo
+<div align="center"><img src="./src/assests/images/demo.gif"></div>
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [✓] User friendly
+- [✓] Mobile First
+- [✓] Twitter-like structure/style 
+- [✓] List Tweets by date descending
+- [✓] Removes Tweets older than 30 seconds
+- [✓] Like/Dislike animation
+- [✓] Liked Tweets counter above each list
+- [✓] Toggle between All Tweets and Liked Tweets list
+- [✓] Delete all function for each list
+- [✓] App up and running on [AWS Amplify](https://main.d2k3vgnljt4tx7.amplifyapp.com/) 🚀
 
-### `npm run build`
+## Technology and resources
+- React JS
+- Redux
+- RxJS
+- SASS
+- BEM
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Style Guide
+I used a linter library (ESLint) with the Airbnb Style Guide, one of the most popular style guides available on Github, to guide the development through a set of best practices and guidelines for keeping the code quality.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Fast setup (CLI)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Download or Clone the project and extract it
+2. Download [Node.js](https://nodejs.org/it/) and install it.
+3. Run `npm install` in the project's root folder
+4. Start the app in the development mode via command line `npm start`
+5. The project now is running on [http://localhost:3000](http://localhost:3000)

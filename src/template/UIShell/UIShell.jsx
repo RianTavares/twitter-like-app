@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Menu from '../../components/Menu';
 import DeleteAllModal from '../../components/Modal';
 import TopBar from '../../components/TopBar';
+import { tweets } from '../../services/tweetsService';
 import * as ModalsActions from '../../store/actions/modals';
 import * as TweetsActions from '../../store/actions/tweets';
 import { PAGE_NAMES } from '../../utils/constants';
@@ -23,6 +24,17 @@ const UIShell = ({ children }) => {
     dispatch(ModalsActions.toggleDeleteModalStatus());
   };
 
+  useEffect(() => {
+    const subscriber = tweets.subscribe((observer) => {
+      observer.id = `${observer.account}-${observer.timestamp}`;
+      observer.liked = false;
+
+      dispatch(TweetsActions.setNewTweetsList(observer));
+    });
+
+    return () => subscriber.unsubscribe();
+  }, []);
+
   return (
     <>
       <section className="twitter-like-app">
@@ -35,7 +47,7 @@ const UIShell = ({ children }) => {
         open={deleteAllModalStatus}
         modalHeading="Delete all Tweets?"
         modalAriaLabel="This can&#39;t be undone and it will be removed from your profile,
-      the timeline of any accounts that follow you, and from Twitter search results."
+          the timeline of any accounts that follow you, and from Twitter search results."
         danger
         primaryButtonText="Delete All"
         secondaryButtonText="Cancel"

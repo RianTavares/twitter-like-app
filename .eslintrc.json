@@ -19,11 +19,12 @@
     ],
     "rules": {
         "no-restricted-exports": "off",
-        "react/function-component-definition": 0,
+        "react/function-component-definition": "off",
         "react/prop-types": "off",
         "default-param-last" : "off",
         "react/jsx-props-no-spreading": "off",
         "no-param-reassign": "off",
-        "import/prefer-default-export": "off"
+        "import/prefer-default-export": "off",
+        "no-unused-expressions": "off"
     }
 }
