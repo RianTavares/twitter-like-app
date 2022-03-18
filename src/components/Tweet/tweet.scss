@@ -1,6 +1,6 @@
 .tweet {
   display: flex;
-  padding: $GUTTER/2 $GUTTER/2 0 $GUTTER/2;
+  padding: calc($GUTTER / 2) calc($GUTTER / 2) 0 calc($GUTTER / 2);
   @include gray-border-top;
 
   &__account {
@@ -8,14 +8,14 @@
   }
 
   &__time {
-    margin-left: $GUTTER/4;
+    margin-left: calc($GUTTER / 8);
     color: $SECONDARY_TEXT;
     font-style: italic;
     font-size: 14px; 
   }
 
   &__text {
-    margin-top: $GUTTER/8;
+    margin-top: calc($GUTTER / 8);
   }
 
   &__content {

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 import RenderTypeButtons from './components/RenderTypeButtons';
 
@@ -17,11 +16,9 @@ const Modal = (props) => {
   const freezeScroll = () => {
     const { body } = document;
 
-    if (open) {
-      body.style.overflow = 'hidden';
-    }
-
-    body.style.overflow = 'auto';
+    open
+      ? body.style.overflow = 'hidden'
+      : body.style.overflow = 'auto';
   };
 
   useEffect(() => {

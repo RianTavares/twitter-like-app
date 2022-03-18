@@ -18,7 +18,7 @@ const Likes = () => {
     );
   }
 
-  return <>nothing</>;
+  return <p className="no-liked-tweets">There are no liked tweets to display.</p>;
 };
 
 export default Likes;

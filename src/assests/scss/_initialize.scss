@@ -13,16 +13,6 @@ p, span, h1 {
   font-family: $FONT;
 }
 
-.twitter-like-app {
-  position: relative;
-  min-height: 100vh;
-  padding-top: $GUTTER*2;
-  padding-bottom: $GUTTER*2;
-  background-color: $BACKGROUND;
-
-  @include margin-page;
-
-  @media #{$BREAKPOINT-TABLET} {
-    @include gray-border-right;
-  }
+li {
+  list-style-type: none;
 }

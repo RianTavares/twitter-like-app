@@ -10,14 +10,16 @@ const TweetsList = (props) => {
   const likedTweets = useSelector((state) => state.tweets.likedTweets);
   const list = type === PAGE_NAMES.HOME ? allTweets : likedTweets;
 
-  if (allTweets.length <= 0 && type === PAGE_NAMES.HOME) return <Loading />;
+  if (list.length <= 0 && type === PAGE_NAMES.HOME) return <Loading />;
 
   return (
-    <>
+    <ul className="tweets-list">
       {list.map((tweet) => (
-        <Tweet data={tweet} key={tweet.id} />
+        <li key={tweet.id}>
+          <Tweet data={tweet} />
+        </li>
       ))}
-    </>
+    </ul>
   );
 };
 
