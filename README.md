@@ -30,14 +30,14 @@ The core function is to list values sent by an Observable as a Twitter-like stru
 
 ## Table of contents
 
-- [Overview](#what-does-it-do)
-  - [Demo](#demo)
-  - [Features](#features)
-  - [Technology and resources](#technology-and-resources)
-  - [Style Guide](#style-guide)
-- [Setup process](#fast-setup)
-  - [Fast setup](#fast-setup)
-- [Development process explained](docs/PROCESS.md)
+- [What does it do](#what-does-it-do)
+- [Table of contents](#table-of-contents)
+- [Demo](#demo)
+- [Features](#features)
+- [Technology and resources](#technology-and-resources)
+- [Style Guide](#style-guide)
+- [Local setup with Node](#local-setup-with-node)
+- [Running with Docker](#running-with-docker)
   
 
 ## Demo
@@ -66,10 +66,20 @@ The core function is to list values sent by an Observable as a Twitter-like stru
 ## Style Guide
 I used a linter library (ESLint) with the Airbnb Style Guide, one of the most popular style guides available on Github, to guide the development through a set of best practices and guidelines for keeping the code quality.
 
-## Fast setup (CLI)
+## Local setup with Node
 
 1. Download or Clone the project and extract it
 2. Download [Node.js](https://nodejs.org/it/) and install it.
 3. Run `npm install` in the project's root folder
 4. Start the app in the development mode via command line `npm start`
 5. The project now is running on [http://localhost:3000](http://localhost:3000)
+
+
+## Running with Docker
+
+1. You should first have[ docker and docker-compose](https://docs.docker.com/get-docker/) in your machine
+2. Run `docker-compose up -d --build` in the project's root folder
+3. The project now is running on [http://localhost:3001](http://localhost:3001)
+4. To stop the docker container just run `docker-compose stop` in your terminal
+  
+    
