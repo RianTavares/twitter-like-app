@@ -34,12 +34,12 @@
 
   &__description {
     color: $SECONDARY_TEXT;
-    margin-top: $GUTTER/2;
+    margin-top: calc($GUTTER / 2);
   }
 
   &__actions {
     width: 100%;
-    padding-top: $GUTTER/2;
+    padding-top: calc($GUTTER / 2);
   }
 
   &--open {
