@@ -30,15 +30,16 @@ The core function is to list values sent by an Observable as a Twitter-like stru
 
 ## Table of contents
 
-- [What does it do](#what-does-it-do)
-- [Table of contents](#table-of-contents)
-- [Demo](#demo)
-- [Features](#features)
-- [Technology and resources](#technology-and-resources)
-- [Style Guide](#style-guide)
-- [Local setup with Node](#local-setup-with-node)
-- [Running with Docker](#running-with-docker)
-  
+- [Overview](#what-does-it-do)
+  - [Demo](#demo)
+  - [Features](#features)
+  - [Technology and resources](#technology-and-resources)
+  - [Style Guide](#style-guide)
+- [Setup process](#fast-setup)
+  - [Local setup with Node](#local-setup-with-node)
+  - [Running with Docker](#running-with-docker)
+  - [Running Tests](#running-tests)
+- [Development process explained](docs/PROCESS.md)
 
 ## Demo
 <div align="center"><img src="./src/assests/images/demo.gif"></div>
@@ -53,8 +54,11 @@ The core function is to list values sent by an Observable as a Twitter-like stru
 - [✓] Like/Dislike animation
 - [✓] Liked Tweets counter above each list
 - [✓] Toggle between All Tweets and Liked Tweets list
-- [✓] Delete all function for each list
-- [✓] App up and running on [AWS Amplify](https://main.d2k3vgnljt4tx7.amplifyapp.com/) 🚀
+- [✓] "Delete all" function for each list
+- [✓] Test coverage
+- [✓] "Dockerized"
+- [✓] App up and running on [AWS Amplify Dev env](https://dev.d2k3vgnljt4tx7.amplifyapp.com/) 🚀
+- [✓] App up and running on [AWS Amplify Prod env](https://main.d2k3vgnljt4tx7.amplifyapp.com/) 🚀
 
 ## Technology and resources
 - React JS
@@ -81,5 +85,18 @@ I used a linter library (ESLint) with the Airbnb Style Guide, one of the most po
 2. Run `docker-compose up -d --build` in the project's root folder
 3. The project now is running on [http://localhost:3001](http://localhost:3001)
 4. To stop the docker container just run `docker-compose stop` in your terminal
+
+## Running Tests
+#### To run simplified preview tests:
+
+1.  Run `npm run test` in the project's root folder
+
+#### To run tests seeing their respective descriptions:
+
+1.  Run `npm run test-verbose` in the project's root folder
+
+<hr>
+
+To check the development process explained [click here](docs/PROCESS.md)!
   
     

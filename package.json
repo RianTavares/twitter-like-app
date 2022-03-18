@@ -18,8 +18,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test-verbose": "react-scripts test --env=jsdom --verbose",
+    "test": "react-scripts test --watchAll=false",
+    "test-verbose": "react-scripts test --env=jsdom --verbose --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
