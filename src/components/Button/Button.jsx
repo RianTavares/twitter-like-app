@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import variables from '../../assests/scss/exports.scss';
 
@@ -15,11 +14,11 @@ const Button = (props) => {
   };
 
   const {
-    style,
     textColor = 'primary',
     backgroundColor = 'ghost',
     border = `1px solid ${variables.borderColor}`,
     text,
+    width = '100%',
     onClick,
   } = props;
 
@@ -33,6 +32,7 @@ const Button = (props) => {
         backgroundColor: bgColor,
         border,
         color: txtColor,
+        width,
       }}
       onClick={onClick}
       type="button"

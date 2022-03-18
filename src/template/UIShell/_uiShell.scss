@@ -1,0 +1,21 @@
+.twitter-like-app {
+  display: flex;
+
+  &__tweets-list {
+    position: relative;
+    min-height: 100vh;
+    padding-top: $GUTTER * 2;
+    padding-bottom: $GUTTER * 2;
+    background-color: $BACKGROUND;
+
+    @include margin-page;
+
+    @media #{$BREAKPOINT-TABLET} {
+      @include gray-border-right;
+    }
+  }
+
+  &__sidebar {
+    position: relative;
+  }
+}

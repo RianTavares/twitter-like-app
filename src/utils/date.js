@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 export const getSecsFromNow = (postTime) => {
   const oneSecondInMs = 1000;
   const now = Date.now();
