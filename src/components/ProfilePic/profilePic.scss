@@ -1,5 +1,5 @@
 .profile-picture {
-  margin-right: $GUTTER/2;
+  margin-right: calc($GUTTER / 2);
   
   &__shape {
     width: 48px;

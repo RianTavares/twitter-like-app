@@ -2,7 +2,7 @@
   width: 100%;
   height: $GUTTER*2;
   background-color: $BACKGROUND;
-  padding: 0 $GUTTER/2;
+  padding: 0 calc($GUTTER / 2);
   @include gray-border-top;
 
   display: flex;
@@ -27,9 +27,8 @@
   
   &__container {
     width: 100%;
-    padding: 0 $GUTTER/2;
+    padding: 0 calc($GUTTER / 2);
     margin: 0;
-    list-style-type: none;
 
     display: flex;
 
@@ -37,7 +36,7 @@
       height: 100%;
       flex-direction: column;
       align-items: center;
-      padding: $GUTTER/2 0;
+      padding: calc($GUTTER / 2) 0;
     }
 
     @media #{$BREAKPOINT-DESK} {

@@ -3,7 +3,7 @@
   height: $GUTTER*2;
   background: rgba(0, 0, 0, .65);
   backdrop-filter: blur(12px);
-  padding: 0 $GUTTER/2;
+  padding: 0 calc($GUTTER / 2);
 
   position: fixed;
   z-index: 2;
@@ -45,6 +45,6 @@
 
   &__icon {
     width: 14px;
-    margin-right: $GUTTER/8;
+    margin-right: calc($GUTTER / 8);
   }
 }

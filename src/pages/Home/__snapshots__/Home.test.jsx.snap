@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page renders tweets list structure 1`] = `
+<ul
+  className="tweets-list"
+>
+  <li>
+    <article
+      className="tweet"
+    >
+      <section
+        className="profile-picture"
+      >
+        <div
+          className="profile-picture__shape"
+        />
+      </section>
+      <section
+        className="tweet__content"
+      >
+        <div
+          className="tweet__header"
+        >
+          <span
+            className="tweet__account"
+          >
+            iamdevloper
+          </span>
+          <span
+            className="tweet__time"
+          >
+            a second ago
+          </span>
+        </div>
+        <p
+          className="tweet__text"
+        >
+          Expert Tweet number 1
+        </p>
+        <div
+          className="tweet__actions"
+        >
+          <button
+            className="like-canvas"
+            onClick={[Function]}
+            type="button"
+          >
+            <div
+              className="like-canvas__heart"
+            />
+          </button>
+        </div>
+      </section>
+    </article>
+  </li>
+</ul>
+`;
