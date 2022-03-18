@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Menu from '../../components/Menu';
 import DeleteAllModal from '../../components/Modal';
+import Sidebar from '../../components/Sidebar';
 import TopBar from '../../components/TopBar';
 import { tweets } from '../../services/tweetsService';
 import * as ModalsActions from '../../store/actions/modals';
@@ -36,11 +37,15 @@ const UIShell = ({ children }) => {
   }, []);
 
   return (
-    <>
-      <section className="twitter-like-app">
+    <section className="twitter-like-app">
+      <section className="twitter-like-app__tweets-list">
         <TopBar />
         {children}
         <Menu />
+      </section>
+
+      <section className="twitter-like-app__sidebar">
+        <Sidebar />
       </section>
 
       <DeleteAllModal
@@ -54,7 +59,7 @@ const UIShell = ({ children }) => {
         onRequestSubmit={handleDeleteAll}
         onSecondarySubmit={() => dispatch(ModalsActions.toggleDeleteModalStatus())}
       />
-    </>
+    </section>
   );
 };
 
