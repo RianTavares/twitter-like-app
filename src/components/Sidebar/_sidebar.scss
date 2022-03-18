@@ -1,0 +1,91 @@
+.sidebar {
+  display: none;
+  
+  position: fixed;
+  background-color: $BACKGROUND_GRAY;
+  margin-top: $GUTTER;
+  margin-left: $GUTTER;
+  padding: calc($GUTTER / 2);
+  border-radius: 16px;
+  min-width: 300px;
+
+  @media #{$BREAKPOINT-DESK} {
+    display: block;
+
+  }
+
+  &__content {
+    a {
+      text-decoration:none;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: calc($GUTTER / 2);
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: calc($GUTTER / 2);
+  }
+
+  &__region {
+    color: $TERTIARY_TEXT;
+    font-size: 11px;
+
+    p {
+      color: inherit;
+    }
+  }
+
+  &__tweets {
+    color: $TERTIARY_TEXT;
+    font-size: 11px;
+
+    p {
+      color: inherit;
+    }
+  }
+
+  &__link {
+    font-size: 13px;
+    font-weight: 700;
+    margin: calc($GUTTER / 8) 0;
+  }
+
+  &__division {
+    opacity: 0.2;
+    border: dashed 0.5px #ffffff;
+  }
+
+  &__follow {
+    display: flex;
+  }
+
+  &__picture {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+
+    img {
+      width: 100%;
+      border-radius: inherit;
+    }
+  }
+
+  .twitter-account-container {
+    width: 70%;
+    padding: 0 4px;
+
+    &__title {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    &__subtitle {
+      color: $TERTIARY_TEXT;
+      font-size: 13px;
+    }
+  }
+}

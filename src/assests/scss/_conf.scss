@@ -8,15 +8,19 @@ $GUTTER: 32px;
 
 $LIGHT_COLOR: #D9D9D9;
 $GRAY: #6E767D;
+$GRAY_SECONDARY: #71767b;
 $GRAY_DARK: #2f3336;
+$GRAY_SECONDARY_DARK: #16181C;
 $BLACK: #000;
 $BLUE_LIGHT: #1D9BEF;
 $RED: #F4222D;
 
 $TEXT: $LIGHT_COLOR;
 $SECONDARY_TEXT: $GRAY;
+$TERTIARY_TEXT: $GRAY_SECONDARY;
 $ALERT_TEXT: $RED;
 $BACKGROUND: $BLACK;
+$BACKGROUND_GRAY: $GRAY_SECONDARY_DARK;
 $BORDER_COLOR: $GRAY_DARK;
 $FONT: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
@@ -49,6 +53,7 @@ $BREAKPOINT-MOBILE-LAND: 		"only screen and (min-width: 480px)";
 
 @mixin margin-page {
   width: calc(100% - 20px);
+  margin: 0 auto;
 
   @media #{$BREAKPOINT-TABLET} {
     max-width: 600px;
