@@ -23,4 +23,4 @@ const Tweet = (props) => {
   );
 };
 
-export default Tweet;
+export default React.memo(Tweet);
