@@ -73,7 +73,7 @@ I used a linter library (ESLint) with the Airbnb Style Guide, one of the most po
 ## Local setup with Node
 
 1. Download or Clone the project and extract it
-2. Download [Node.js](https://nodejs.org/it/) and install it.
+2. Download [Node.js](https://nodejs.org/it/) (v 16) and install it.
 3. Run `npm install` in the project's root folder
 4. Start the app in the development mode via command line `npm start`
 5. The project now is running on [http://localhost:3000](http://localhost:3000)

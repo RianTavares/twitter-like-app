@@ -1,20 +1,30 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { createSelector } from 'reselect';
 import { PAGE_NAMES } from '../../utils/constants';
 import Loading from '../Loading';
 import Tweet from '../Tweet';
 
+const selectLikedTweets = createSelector(
+  (state) => state.tweets,
+  (tweets) => tweets.likedTweets,
+);
+
+const selectAllTweets = createSelector(
+  (state) => state.tweets,
+  (tweets) => tweets.allTweets,
+);
+
 const TweetsList = (props) => {
   const { type } = props;
-  const allTweets = useSelector((state) => state.tweets.allTweets);
-  const likedTweets = useSelector((state) => state.tweets.likedTweets);
-  const list = type === PAGE_NAMES.HOME ? allTweets : likedTweets;
+  const selectList = type === PAGE_NAMES.HOME ? selectAllTweets : selectLikedTweets;
+  const tweetsList = useSelector(selectList);
 
-  if (list.length <= 0 && type === PAGE_NAMES.HOME) return <Loading />;
+  if (tweetsList.length <= 0 && type === PAGE_NAMES.HOME) return <Loading />;
 
   return (
     <ul className="tweets-list">
-      {list.map((tweet) => (
+      {tweetsList.map((tweet) => (
         <li key={tweet.id}>
           <Tweet data={tweet} />
         </li>
@@ -23,4 +33,4 @@ const TweetsList = (props) => {
   );
 };
 
-export default TweetsList;
+export default React.memo(TweetsList);
