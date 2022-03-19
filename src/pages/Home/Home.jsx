@@ -10,7 +10,7 @@ const Home = () => {
   const allTweets = useSelector((state) => state.tweets.allTweets);
 
   useEffect(() => {
-    dispatch(PageActions.setCurrentPage({ index: 0, name: PAGE_NAMES.HOME }));
+    dispatch(PageActions.setCurrentPage({ name: PAGE_NAMES.HOME }));
   }, []);
 
   if (allTweets.length <= 0) return <Loading />;
