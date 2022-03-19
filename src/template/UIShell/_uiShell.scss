@@ -3,6 +3,7 @@
 
   &__tweets-list {
     position: relative;
+    overflow-y: hidden;
     min-height: 100vh;
     padding-top: $GUTTER * 2;
     padding-bottom: $GUTTER * 2;

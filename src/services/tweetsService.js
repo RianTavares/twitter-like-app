@@ -15,7 +15,4 @@ const tweets = merge(
   createTweetSource(5000, 'CommitStrip', 'Funny'),
 );
 
-export {
-  createTweetSource,
-  tweets,
-};
+export { tweets };
