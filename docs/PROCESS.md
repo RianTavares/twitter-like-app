@@ -48,7 +48,7 @@
 <br />
   
   ### Project setup
-  I decided to group the files by file type to organize their structure. It is a common way to structure projects and pretty understandable since we have the components inside the components folder, pages inside the pages folder, and so go on, but of course, avoiding deep directory nesting.
+  I decided to group the files by file type to organize their structure. It is a common way to structure projects and pretty understandable since we have the components inside the components folder, pages inside the pages folder, and so on, but of course, avoiding deep directory nesting.
 
       src/
         components/
@@ -61,7 +61,7 @@
           Likes/
         ...
 
-  As some components like `TopBar` and `Menu` they should be rendered on all pages, I created a component called `UIShell` that it is exported as a withRouter component to be on the top of the routes, receiving them as `children` props, and acting as a template for the application. 
+  As some components like `TopBar` and `Menu` they should be rendered on all pages, I created a component called `UIShell` that is exported as a withRouter component to be on the top of the routes, receiving them as `children` props, and acting as a template for the application. 
 
   A shell is a collection of components shared by all products within a platform. 
   And the UIShell component is the template and the foundation for navigating and orienting the user to the UI.
@@ -71,14 +71,14 @@
         UIShell/
       ...
 
-  To keep the Observable emitting value without re-rendering is subscribed inside  the UIShell component.
+  To keep the Observable streaming values without the component unmounting, the `UIShell` component (which is outermost component) is the one that subscribes to the observable.
   To keep it organized, I created the `services` folder to export the creation of the observable and the subscription function from there. 
 
       src/
         services/
           tweetsService.js
 
-  ### Test
+  ### Testing
   Testing a Front-end application is essential. It aims to test functionalities and verify that a website or app’s presentation layer is bug or error-free. After every update, this has to be done to ensure recent changes have not degraded any aspect of the UI.
 
   To demonstrate, I selected the two core components of the application, the Home page, which lists tweets, and the Likes page, which lists the liked tweets.
@@ -115,13 +115,13 @@
   ### Build and Deploy
   
   To deploy the application, two AWS applications enviroments were created. 
-  One for the `dev` branch, with the purpose of testing the application befor deploy it on "Production".
+  One for the `dev` branch, with the purpose of testing the application before deploy it on "Production".
 
-  The oder was created for the `main` branch, representing the "Production" enviroment. 
+  The other was created for the `main` branch, representing the "Production" enviroment. 
 
   The pipeline is connected to the GitHub repostiry and starts automatically when the branch receives changes. 
 
-  Aiming to deploy only if the tests built are passing, I set the amplify.yml with the configuration to run the tests in the preBuild step. 
+  Aiming to deploy only if the tests built are passing, I set the `amplify.yml` with the configuration to run the tests in the preBuild step. 
 
 ```yml
       # amplify.yml
