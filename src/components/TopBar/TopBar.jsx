@@ -1,17 +1,27 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { createSelector } from 'reselect';
 import garbage from '../../assests/images/garbage.svg';
 import * as ModalsActions from '../../store/actions/modals';
 import { PAGE_NAMES } from '../../utils/constants';
 
+const selectNumLikedList = createSelector(
+  (state) => state.tweets,
+  (tweets) => tweets.likedTweets.length,
+);
+
+const selectNumAllTweetsList = createSelector(
+  (state) => state.tweets,
+  (tweets) => tweets.allTweets.filter((tweet) => tweet.liked).length,
+);
+
 const TopBar = () => {
   const dispatch = useDispatch();
   const currentPage = useSelector((state) => state.pages.currentPage);
-  const likedTweets = useSelector((state) => state.tweets.likedTweets);
-  const allTweets = useSelector((state) => state.tweets.allTweets);
-  const likesCounter = currentPage.name === PAGE_NAMES.HOME
-    ? allTweets.filter((tweet) => tweet.liked).length
-    : likedTweets.length;
+  const selectNumCount = currentPage.name === PAGE_NAMES.HOME
+    ? selectNumAllTweetsList
+    : selectNumLikedList;
+  const likesCounter = useSelector(selectNumCount);
 
   const handleDeleteAllClick = () => {
     dispatch(ModalsActions.toggleDeleteModalStatus());
@@ -32,4 +42,4 @@ const TopBar = () => {
   );
 };
 
-export default TopBar;
+export default React.memo(TopBar);

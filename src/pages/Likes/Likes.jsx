@@ -21,4 +21,4 @@ const Likes = () => {
   return <p className="no-liked-tweets">There are no liked tweets to display.</p>;
 };
 
-export default Likes;
+export default React.memo(Likes);
