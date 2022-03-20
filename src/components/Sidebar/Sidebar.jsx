@@ -4,7 +4,7 @@ import Button from '../Button';
 
 const Sidebar = () => {
   const follow = () => {
-    window.location = 'https://twitter.com/RianTavaresDev';
+    window.open('https://twitter.com/RianTavaresDev');
   };
 
   return (
