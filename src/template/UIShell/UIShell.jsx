@@ -29,7 +29,6 @@ const UIShell = ({ children }) => {
     const subscriber = tweets.subscribe((observer) => {
       observer.id = `${observer.account}-${observer.timestamp}`;
       observer.liked = false;
-      observer.publishedAt = 'a second ago';
 
       dispatch(TweetsActions.setNewTweetsList(observer));
     });
