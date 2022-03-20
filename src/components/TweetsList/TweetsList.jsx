@@ -23,7 +23,7 @@ const TweetsList = (props) => {
     <ul className="tweets-list">
       {tweetsList.map((tweet) => (
         <li key={tweet.id}>
-          <Tweet data={tweet} />
+          <Tweet data={tweet} type={type} />
         </li>
       ))}
     </ul>
