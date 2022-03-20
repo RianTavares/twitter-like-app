@@ -7,13 +7,6 @@
     font-weight: bold;
   }
 
-  &__time {
-    margin-left: calc($GUTTER / 8);
-    color: $SECONDARY_TEXT;
-    font-style: italic;
-    font-size: 14px; 
-  }
-
   &__text {
     margin-top: calc($GUTTER / 8);
   }
