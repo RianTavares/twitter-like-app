@@ -17,7 +17,7 @@ const render = (component) => rtlRender(
 describe('Home page', () => {
   test('renders Loading component before any tweet is sent', () => {
     render(<Home />);
-    expect(screen.getByText('...loading')).toBeInTheDocument();
+    expect(screen.getByTestId('loading')).toBeInTheDocument();
   });
 });
 

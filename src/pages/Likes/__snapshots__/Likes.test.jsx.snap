@@ -27,7 +27,7 @@ exports[`Likes page renders tweets liked list structure 1`] = `
             iamdevloper
           </span>
           <span
-            className="tweet__time"
+            className="tweet-published-time"
           >
             a second ago
           </span>
