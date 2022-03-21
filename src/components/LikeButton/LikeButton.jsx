@@ -41,4 +41,4 @@ const LikeButton = (props) => {
   );
 };
 
-export default LikeButton;
+export default React.memo(LikeButton);
