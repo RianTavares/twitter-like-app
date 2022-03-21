@@ -35,7 +35,7 @@ const Menu = () => {
             onClick={() => goTo('/likes')}
             type="button"
           >
-            Liked Post
+            Likes
           </button>
         </li>
       </ul>
